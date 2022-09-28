@@ -1,3 +1,5 @@
+//const { getInternationalStudents, getAllStudents, getPrograms } = require('./data/data-service.js');
+
 dataService = require('./data/data-service.js')
 express = require('express');
 app = express();
@@ -19,15 +21,21 @@ app.get("/about", (req,res) => {
 });
 
 app.get("/students", (req,res) => {
-    res.send("retrieve students");
+    dataService.getAllStudents()
+    .then((students) => res.json(students))
+    .catch((msg) => console.log(msg));
 });
 
 app.get("/intlstudents", (req,res) => {
-    res.send("retrieve international students");
+    dataService.getInternationalStudents()
+    .then((students) => res.json(students))
+    .catch((msg) => console.log(msg));
 });
 
 app.get("/programs", (req,res) => {
-    res.send("retrieve programs");
+    dataService.getPrograms()
+    .then((programs) => res.json(programs))
+    .catch((msg) => console.log(msg));
 });
 
 app.use((req,res) => {

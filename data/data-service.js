@@ -26,7 +26,7 @@ module.exports.initialize = function() {
 
 module.exports.getAllStudents = function() {
     return new Promise((resolve, reject) => {
-        if(length(students) == 0) {
+        if(programs.length == 0) {
             reject("No students found"); return;
         }
         else {
@@ -37,19 +37,19 @@ module.exports.getAllStudents = function() {
 
 module.exports.getInternationalStudents = function() {
     return new Promise((resolve, reject) => {
-        if(length(students) == 0) {
+        if(students.length == 0) {
             reject("No students found"); return;
         }
         else {
-            internationalStudents = students.filter((e) => e.isInternationalStudent == True);
-            resolve(students.filter(internationalStudents));
+            internationalStudents = students.filter((e) => e.isInternationalStudent == true);
+            resolve(internationalStudents);
         }
     });
 }
 
 module.exports.getPrograms = function() {
     return new Promise((resolve, reject) => {
-        if(length(programss) == 0) {
+        if(programs.length == 0) {
             reject("No programs found"); return;
         }
         else {
