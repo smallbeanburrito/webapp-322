@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-12">
+          <h2>Programs</h2>
+          <hr />
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Program Code</th>
+                            <th>Program Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each data}}
+                        <tr>
+                            <td><a href="/students?program={{programCode}}">{{programCode}}</a></td>
+                            <td><a href="/students?program={{programCode}}">{{programName}}</a></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</div>

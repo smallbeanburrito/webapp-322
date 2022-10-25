@@ -121,3 +121,27 @@ module.exports.getStudentById = function(sid) {
         reject("No student with ID: " + sid);
     });
 }
+
+module.exports.updateStudent = function(studentData) {
+    return new Promise ((resolve,reject) => {
+        newStudent = students.find((student) => student.studentID == studentData.studentID);
+            newStudent.firstName = studentData.firstName;
+            newStudent.lastName = studentData.lastName;
+            newStudent.email = studentData.email;
+            newStudent.phone = studentData.phone;
+            newStudent.addressStreet = studentData.addressStreet;
+            newStudent.addressCity = studentData.addressCity;
+            newStudent.addressState = studentData.addressState;
+            newStudent.addressPostal = studentData.addressPostal;
+            newStudent.status = studentData.status;
+            newStudent.program = studentData.program;
+            newStudent.credential = studentData.credential;
+            if(studentData.international) {
+                newStudent.isInternationalStudent = true;
+            }
+            else {
+                newStudent.isInternationalStudent = false;
+            }
+            resolve(); 
+    });
+}
