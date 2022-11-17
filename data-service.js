@@ -106,6 +106,8 @@ module.exports.addStudent = function(studentData) {
 }
 
 module.exports.getStudentsByStatus = function(time){
+    // must use enroll when deployed on cyclic
+    // on local machine must use time
     var enroll;
     if (time == 'Full%20Time') {
         enroll = 'Full Time';
