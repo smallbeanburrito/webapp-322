@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2> {{data.programName}}-Program Code: {{ data.programCode}}</h2>
+        <hr />
+        <form method="post" action="/program/update">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="firstName">Program Code:</label>
+                            <input class="form-control" id="programCode" name="programCode" type="text" value="{{ data.programCode}}" readonly/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="registration">Program Name:</label>
+                            <input class="form-control" id="programName" name="programName" type="text" value="{{data.programName}}"/>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <hr />
+            <input type="submit" class="btn btn-primary pull-right" value="Update Program" /><br /><br /><br />
+        </form>
+    </div>
+</div>

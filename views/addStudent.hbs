@@ -92,18 +92,16 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="programCode">Program:</label>
-                                    <select class="form-control" name="programCode" id="programCode">
-                                        <option value="ACF">ACF - Accounting and Finance</option>
-                                        <option value="AVO">AVO - Aviation Operations</option>
-                                        <option value="DAN">DAN - 3D Animation</option>
-                                        <option value="CPP">CPP - Computer Programming</option>
-                                        <option value="CPA">CPA - Computer Programming and Analysis</option>
-                                        <option value="CTY">CTY - Computer Systems Technology</option>
-                                        <option value="CSN">CSN - Computer Systems Technician</option>
-                                        <option value="BSD">BSD - Software Development (Honours Bachelor of Technology)</option>
-                                        <option value="IFS">IFS - Informatics and Security(Honours Bachelor of Technology)</option>
-                                        <option value="DAS">DAS - Data Science and Analytics program (Honours Bachelor of Technology)</option>
-                                    </select>
+                                    {{#if programs}}
+                                        <select class="form-control" name="program" id="program">
+                                                <option value="">Select Program</option>
+                                                {{#each programs}}
+                                                    <option value="{{programCode}}"> {{programCode}} - {{programName}}</option>
+                                                {{/each}}
+                                        </select>
+                                    {{else}}
+                                        <div>No Programs</div>
+                                    {{/if}}
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -114,8 +112,8 @@
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="employeeManagerNum">Expected Credential:</label>
-                                    <input class="form-control" id="employeeManagerNum" name="employeeManagerNum" type="text" />
+                                    <label for="credential">Expected Credential:</label>
+                                    <input class="form-control" id="credential" name="credential" type="text" />
                                 </div>
                             </div>
                         </div>
@@ -132,7 +130,7 @@
         
                     <hr />
         
-                    <input type="submit" class="btn btn-primary pull-right" value="Add Employee" /><br /><br /><br />
+                    <input type="submit" class="btn btn-primary pull-right" value="Add Student" /><br /><br /><br />
         
                 </form>
             </div>
