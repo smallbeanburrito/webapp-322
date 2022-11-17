@@ -117,6 +117,7 @@ app.get("/student/:studentId", (req, res) => {
     dataService.getStudentById(req.params.studentId).then((data) => {
         if (data) {
             viewData.student = data; //store student data in the "viewData" object as "student"
+            console.log(data);
         } else {
             viewData.student = null; // set student to null if none were returned
         }

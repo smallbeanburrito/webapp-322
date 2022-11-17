@@ -106,10 +106,17 @@ module.exports.addStudent = function(studentData) {
 }
 
 module.exports.getStudentsByStatus = function(time){
+    var enroll;
+    if (time == 'Full%20Time') {
+        enroll = 'Full Time';
+    } 
+    else {
+        enroll = 'Part Time';
+    }
     return new Promise((resolve,reject)=> {
         Student.findAll({
             where : {
-                status: time
+                status: enroll
             }
         })
         .then((data) => resolve(data))
