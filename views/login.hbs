@@ -1,0 +1,50 @@
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-12">
+        
+                <h2>Log In</h2>
+
+                <br />
+                
+                {{#if errorMessage}}
+                    <div class="alert alert-danger"> <strong>Error:</strong> {{errorMessage}}</div> 
+                {{/if}}
+
+                <form method="post" action="/login">
+        
+                    <fieldset>
+                        
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="username">User Name</label>
+                                    <input class="form-control" id="userName" name="userName" type="text" {{#if userName}}value="{{userName}}"{{else}}placeholder="User Name"{{/if}} required/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input class="form-control" id="password" name="password" type="password" placeholder="Password" required/>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+        
+                    <hr />
+        
+                    <input type="submit" class="btn btn-primary pull-right" value="Login" /><br /><br /><br />
+        
+                </form>
+            </div>
+      </div>
+    </div>
+
+    <!-- Latest compiled and minified jQuery 3.2.1 JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified Bootstrap 3.3.7 JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

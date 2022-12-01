@@ -112,8 +112,11 @@ module.exports.getStudentsByStatus = function(time){
     if (time == 'Full%20Time') {
         enroll = 'Full Time';
     } 
-    else {
+    else if (time == 'Part%20Time') {
         enroll = 'Part Time';
+    }
+    else {
+        enroll = time;
     }
     return new Promise((resolve,reject)=> {
         Student.findAll({
